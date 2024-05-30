@@ -19,7 +19,7 @@ const Highlights = () => {
                 opacity: 1,
                 y: 0,
                 duration: 1,
-                stager: 0.25
+                stagger: 0.25
             }
         )
     }, []

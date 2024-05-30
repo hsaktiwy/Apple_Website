@@ -3,6 +3,10 @@ import { hightlightsSlides } from "../constants";
 import gsap from 'gsap';
 import { playImg, replayImg, pauseImg } from "../utils";
 import {useGSAP} from "@gsap/react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const VideoCarousel = () => {
     const videoRef = useRef([]);
     const videoSpanRef = useRef([]);
@@ -119,7 +123,8 @@ const VideoCarousel = () => {
                 // how  long the animation will last
                 const animUpdate = () =>
                 {
-                    anim.progress(videoRef.current[videoId].currentTime / hightlightsSlides[videoId].videoDuration)
+                    if (videoRef.current)
+                        anim.progress(videoRef.current[videoId].currentTime / hightlightsSlides[videoId].videoDuration)
                 }
 
                 if (isPlaying)
@@ -161,7 +166,7 @@ const VideoCarousel = () => {
                         <div key={index} id="slider"
                             className="sm:pr-20 pr-10">
                             <div className="video-carousel_container">
-                                <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
+                                <div className="w-[100%] h-[80%] flex-center rounded-3xl overflow-hidden bg-black">
                                     <video
                                         id="video"
                                         playsInline={true}
