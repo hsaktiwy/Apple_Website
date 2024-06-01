@@ -247,5 +247,5 @@ function Model(props) {
   )
 }
 
-export default Model;
+export default React.memo(Model);
 useGLTF.preload('/models/scene.glb')

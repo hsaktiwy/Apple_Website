@@ -1,5 +1,5 @@
 import { Html } from "@react-three/drei";
-
+import React from "react";
 const Loader = () => {
     return (
         <Html>
@@ -14,4 +14,4 @@ const Loader = () => {
     );
 }
 
-export default Loader;
+export default React.memo(Loader);

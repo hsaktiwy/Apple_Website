@@ -9,6 +9,8 @@ import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import {models, sizes} from '../constants/index'
 import { animateWithGsapTimeline } from "./animation";
+import React from "react";
+
 const Model = () => {
     const [size, setSize] = useState('small');
     const [model, setModel] = useState({
@@ -57,7 +59,7 @@ const Model = () => {
         ()=>
         {
             gsap.to('#heading', {y:0, opacity:1})
-        }
+        },[]
     )
     return (
         <div className='common-padding'>
@@ -136,4 +138,4 @@ const Model = () => {
     );
 }
 
-export default Model;
+export default React.memo(Model);

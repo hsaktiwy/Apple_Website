@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { playImg, replayImg, pauseImg } from "../utils";
 import {useGSAP} from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -229,4 +230,4 @@ const VideoCarousel = () => {
     )
 }
 
-export default VideoCarousel;
+export default React.memo(VideoCarousel);

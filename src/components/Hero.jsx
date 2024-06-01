@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { heroVideo, smallHeroVideo } from '../utils';
 import { useEffect, useState } from "react"
 import gsap from 'gsap';
-
+import React from "react";
 const Hero = () => {
     useGSAP( () =>
         {
@@ -41,7 +41,6 @@ const Hero = () => {
             })
         }, []
     )
-    console.log(videoSrc);
     return (
         <div className='Hero'>
             <section className="w-full nav-height bg-black relative">
@@ -65,4 +64,4 @@ const Hero = () => {
     );
 }
 
-export default Hero;
+export default React.memo(Hero);

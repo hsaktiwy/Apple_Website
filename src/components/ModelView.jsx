@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import IPhone from './IPhone'
 import * as THREE from 'three'
 import Loader from './Loader'
+import React from "react";
 const ModelView = ({index, groupRef, gsapType, controlRef, setRotationState, size, item}) => {
     return (
         <View
@@ -37,4 +38,4 @@ const ModelView = ({index, groupRef, gsapType, controlRef, setRotationState, siz
     );
 }
 
-export default ModelView;
+export default React.memo(ModelView);
